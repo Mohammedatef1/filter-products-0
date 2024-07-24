@@ -103,7 +103,7 @@ export default function Home() {
   } = useQuery({
     queryKey: ["products"],
     queryFn: async () => {
-      const { data } = await axios.post<QueryResult<typeProduct>[]>("http://localhost:3000/api/products", {
+      const { data } = await axios.post<QueryResult<typeProduct>[]>("/api/products", {
         filter: {
           sort: filter.sort,
           price: filter.price.range,
